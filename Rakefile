@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Flashcard2::Application.load_tasks
+Appwithoauth::Application.load_tasks

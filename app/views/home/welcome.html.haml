@@ -1,0 +1,10 @@
+.jumbotron
+  %h1 Welcome!
+  %p.lead this is sample!
+  = link_to 'Get Started', '#', class: "btn btn-large btn-success", 'data-toggle' => "modal", 'data-target' => "#login_form"
+
+
+#login_form.modal.hide.fade
+  .modal-header
+  .modal-body
+    = link_to 'Login with Twitter', login_path(:twitter), class: 'btn btn-info'

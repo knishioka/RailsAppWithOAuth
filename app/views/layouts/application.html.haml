@@ -1,0 +1,33 @@
+!!!
+%html{lang: :ja}
+  %head
+    %title FlashCard
+    = stylesheet_link_tag    "application", media:"all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .container
+      .masthead
+        %h3.muted FlashCard
+      -if current_user
+        .navbar.navbar-static
+          .navbar-inner
+            .container
+              %ul.nav{ role: :navigation }
+                %li= link_to 'Home', '#'
+                %li= link_to 'Projects', '#'
+                %li= link_to 'Services', '#'
+                %li= link_to 'Downloads', '#'
+              %ul.nav.pull-right
+                %li.dropdown
+                  %a(href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown") Dropdown 3
+                  %ul.dropdown-menu
+                    %li= link_to 'logout', logout_path
+      - if notice
+        .alert.alert-block
+          %button(type="button" class="close" data-dismiss="alert") &times;
+          = notice
+      = yield
+
+      .footer
+      %p &copy; 3idea Inc. 2013
